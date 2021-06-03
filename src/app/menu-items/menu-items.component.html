@@ -1,0 +1,38 @@
+<div class="container">
+    <div id="box1">
+        <div class="row" id="heading">
+            <h2>Menu</h2>
+        </div>
+        <div class="row" id="row2">
+            <h4>You have a total of [number of items] items left in your cart!!!</h4>
+        </div>
+        <div class="row" id="table">
+            <table id="inner ">
+                <tr>
+                    <td>Item</td>
+                    <td>Name</td>
+                    <td>Brand</td>
+                    <td>Description</td>
+                    <td>Price</td>
+                    <td>Quantity</td>
+                </tr>
+                <tr *ngFor ="let menuItem of menuItems">
+                    <td></td>
+                  <td>{{ menuItem.name }}</td>
+                  <td>{{ menuItem.brand }}</td>
+                  <td>{{ menuItem.description }}</td>
+                  <td>$ {{ menuItem.price }}</td>
+                  <td><form>
+                    <div class="value-button" id="decrease" onclick="decreaseValue()" value="Decrease Value" ></div>
+                    <input type="number" id="number" value="0" />
+                    <div class="value-button" id="increase" onclick="increaseValue()" value="Increase Value"></div>
+                  </form>
+                </td>
+                </tr>
+              </table>
+        </div>
+        <div class="row" id="bottom">
+            <h5>Your order today is: [total]</h5>
+        </div>
+    </div>
+</div>
