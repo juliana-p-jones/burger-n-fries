@@ -1,20 +1,19 @@
 <div class="container">
     <div id="box1">
         <div class="row" id="heading">
-            <h2>Menu</h2>
         </div>
         <div class="row" id="row2">
             <h4>You have a total of [number of items] items left in your cart!!!</h4>
         </div>
         <div class="row" id="table">
             <table id="inner ">
-                <tr>
+                <tr id="cellNames">
                     <td>Item</td>
                     <td>Name</td>
                     <td>Brand</td>
                     <td>Description</td>
                     <td>Price</td>
-                    <td>Quantity</td>
+                    <td>Qty</td>
                 </tr>
                 <tr *ngFor ="let menuItem of menuItems">
                     <td></td>
