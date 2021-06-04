@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { HttpClientModule } from '@angular/common/http';
 
+
 import { FormsModule } from '@angular/forms'; // <-- NgModel lives here
 import { HttpClientInMemoryWebApiModule } from 'angular-in-memory-web-api';
 import { InMemoryDataService } from '/Users/julianajones/my-tour-of-heroes/src/app/in-memory-data.service';

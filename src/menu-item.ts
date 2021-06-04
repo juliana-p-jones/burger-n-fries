@@ -6,6 +6,8 @@ export class MenuItem {
     public description: string,
     public price: number,
     public featureOfDay: boolean,
+    public image: string,
+    public qty: number
   ) {  }
   
 }

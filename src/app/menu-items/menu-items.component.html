@@ -3,7 +3,7 @@
         <div class="row" id="heading">
         </div>
         <div class="row" id="row2">
-            <h4>You have a total of [number of items] items left in your cart!!!</h4>
+            <h4>You have a total of {{totalQty()}} items left in your cart!</h4>
         </div>
         <div class="row" id="table">
             <table id="inner ">
@@ -15,23 +15,26 @@
                     <td>Price</td>
                     <td>Qty</td>
                 </tr>
-                <tr *ngFor ="let menuItem of menuItems">
-                    <td></td>
+                <tr *ngFor ="let menuItem of menuItems" [class.featureOfDay]="menuItem.featureOfDay">
+                    <td><img [src]="menuItem.image" alt=""></td>
                   <td>{{ menuItem.name }}</td>
                   <td>{{ menuItem.brand }}</td>
-                  <td>{{ menuItem.description }}</td>
-                  <td>$ {{ menuItem.price }}</td>
-                  <td><form>
-                    <div class="value-button" id="decrease" onclick="decreaseValue()" value="Decrease Value" ></div>
-                    <input type="number" id="number" value="0" />
-                    <div class="value-button" id="increase" onclick="increaseValue()" value="Increase Value"></div>
+                  <td id="description">{{ menuItem.description }}
+                    <p *ngIf="menuItem.qty > 0" > Enjoy your {{menuItem.name}}</p>  
+                    <p *ngIf="menuItem.qty == 0" > no {{menuItem.name}} today?</p>
+                  </td>
+                  <td>{{ menuItem.price | currency:  'GBP'}}</td>
+                  <td><form id="qtyButton">
+                    <button class= "btn btn-danger"type="button"  id='stock' (click)="decreaseQty(menuItem)">-</button>
+                    <input type="number" name="qty" [(ngModel)]="menuItem.qty" id="inputbox">
+                    <button class= "btn btn-success" type="button" id='stock'(click)="incrementQty(menuItem)">+</button>
                   </form>
                 </td>
                 </tr>
               </table>
         </div>
         <div class="row" id="bottom">
-            <h5>Your order today is: [total]</h5>
+            <h5>Your order today is: {{calcTotal() | currency}}</h5>
         </div>
     </div>
 </div>
