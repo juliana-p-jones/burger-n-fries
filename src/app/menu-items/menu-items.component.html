@@ -1,40 +1,62 @@
 <div class="container">
-    <div id="box1">
-        <div class="row" id="heading">
+  <div id="box1">
+    <div class="col-12">
+      <!-- <div class="row" id="heading">
+    </div> -->
+      <div class="row" id="row2">
+        <div class="col-12">
+          <h4>You have a total of {{totalQty()}} items left in your cart!</h4>
         </div>
-        <div class="row" id="row2">
-            <h4>You have a total of {{totalQty()}} items left in your cart!</h4>
-        </div>
+      </div>
+      <div id=tableBox>
         <div class="row" id="table">
-            <table id="inner ">
-                <tr id="cellNames">
-                    <td>Item</td>
-                    <td>Name</td>
-                    <td>Brand</td>
-                    <td>Description</td>
-                    <td>Price</td>
-                    <td>Qty</td>
-                </tr>
-                <tr *ngFor ="let menuItem of menuItems" [class.featureOfDay]="menuItem.featureOfDay">
-                    <td><img [src]="menuItem.image" alt=""></td>
-                  <td>{{ menuItem.name }}</td>
-                  <td>{{ menuItem.brand }}</td>
-                  <td id="description">{{ menuItem.description }}
-                    <p *ngIf="menuItem.qty > 0" > Enjoy your {{menuItem.name}}</p>  
-                    <p *ngIf="menuItem.qty == 0" > no {{menuItem.name}} today?</p>
-                  </td>
-                  <td>{{ menuItem.price | currency:  'GBP'}}</td>
-                  <td><form id="qtyButton">
-                    <button class= "btn btn-danger"type="button"  id='stock' (click)="decreaseQty(menuItem)">-</button>
-                    <input type="number" name="qty" [(ngModel)]="menuItem.qty" id="inputbox">
-                    <button class= "btn btn-success" type="button" id='stock'(click)="incrementQty(menuItem)">+</button>
-                  </form>
-                </td>
-                </tr>
-              </table>
+          <table id="inner ">
+            <tr id="cellNames">
+              <td>Item</td>
+              <td>Name</td>
+              <td>Brand</td>
+              <td>Description</td>
+              <td>Price</td>
+              <td>Qty</td>
+            </tr>
+            <tr *ngFor="let menuItem of menuItems" [class.featureOfDay]="menuItem.featureOfDay">
+              <td><img [src]="menuItem.image" alt=""></td>
+              <td>{{ menuItem.name }}</td>
+              <td>{{ menuItem.brand }}</td>
+              <td id="description">{{ menuItem.description }}
+                <p *ngIf="menuItem.qty > 0"> Enjoy your {{menuItem.name}}</p>
+                <p *ngIf="menuItem.qty == 0"> no {{menuItem.name}} today?</p>
+              </td>
+              <td>{{ menuItem.price | currency: 'GBP'}}</td>
+              <td>
+                <form id="qtyButton">
+                  <button class="btn btn-danger" type="button" id='stock' (click)="decreaseQty(menuItem)">-</button>
+                  <input type="number" name="qty" [(ngModel)]="menuItem.qty" id="inputbox">
+                  <button class="btn btn-success" type="button" id='stock' (click)="incrementQty(menuItem)">+</button>
+                </form>
+              </td>
+            </tr>
+          </table>
         </div>
-        <div class="row" id="bottom">
-            <h5>Your order today is: {{calcTotal() | currency}}</h5>
+      </div>
+      <div class="row" id="bottom">
+        <div class="col-12">
+          <h5>Your order today is: {{calcTotal() | currency}}</h5>
         </div>
+        <div class="col-12" id="pay">
+          <br><br>
+          <h6>How would you like to pay?</h6>
+          <br>
+          <form id="paymentForm">
+            <input type="radio" id="creditcard" name="creditcard" value="creditcard">
+  <label for="credit">Credit/Debit Card</label><br>
+  <input type="radio" id="paypal" name="paypal" value="paypal">
+  <label for="paypal">PayPal</label><br>
+  <input type="radio" id="googlepay" name="googlepay" value="googlepay">
+  <label for="googlepay">Google Pay</label>
+</form>
+        </div>
+      </div>
     </div>
+  </div>
 </div>

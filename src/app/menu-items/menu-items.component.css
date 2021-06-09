@@ -1,5 +1,5 @@
 *{
-    margin: 5px;
+    margin: 0px;
     /* padding: 2px, 10px, 2px, 10px; */
     box-sizing: border-box;
     text-align:center;
@@ -7,21 +7,24 @@
 }
 #box1{
     background-color: #c2c2c231;
-    border-radius: 15px;
-    padding-top: 20px;
-    padding-bottom: 50px;
-    margin-left: 20%;
-    margin-right: 20%;
+    padding-top: 10%;
+    padding-bottom: 10%;
+    margin-left: 10%;
+    margin-right: 10%;
     margin-top: 0%;
     border: solid rgb(243, 196, 95) 1.5px;
     border-radius: 60px;
+    display: flex;
+    min-width: 520px;
     }
+
  #table{
      margin-top: 20px;
      display: flex;
         box-sizing: border-box;
         text-align:center;
         justify-content: center;
+        display: flex;
     }
 table, th , td {
   border-collapse: collapse;
@@ -62,6 +65,7 @@ img{
 }
 #inputbox{
   color: black;
+  width:25%;
 }
 .btn.btn-success{
 background-color: rgb(66, 115, 201);
@@ -71,4 +75,31 @@ color: blanchedalmond;
 .btn.btn-danger{
   background-color: rgb(190, 81, 123);
   border-color: rgb(190, 81, 123);
+}
+*[_ngcontent-vrm-c50] {
+  box-sizing: border-box;
+  text-align: center;
+  justify-content: center;
+  margin:auto;
+}
+#tableBox{
+  display: flex;
+  flex-shrink: 1;
+  /* width: 900px; */
+  flex-direction: column;
+  align-content: center;
+}
+#pay{
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+}
+#paymentForm{
+  display: flex;
+  flex-direction: row;
+  text-align:center;
+}
+#googlepay, #paypal, #creditcard{
+  margin:5px;
+  margin-left: 10px;
 }
